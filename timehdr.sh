@@ -53,8 +53,8 @@ incremental_compilation() {
         while read line; do
                 echo "$line" >> "$transaction"
                 if [ "${line%%[!#]*}" ]; then
-                        line="${line#\#*[\"]}"
-                        code="${line##*[\"] }"
+                        line="${line#\# *[\"]}"
+                        code="${line##*[\"]}"
                         if [ "${code##\#[! ]*}" = "" ]; then
                                 # ignore pragmas and other stuff
                                 continue

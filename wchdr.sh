@@ -26,8 +26,8 @@ measurement () {
 incremental_count() {
         while read line; do
                 if [ "${line%%[!#]*}" ]; then
-                        line="${line#\#*[\"]}"
-                        code="${line##*[\"] }"
+                        line="${line#\# *[\"]}"
+                        code="${line##*[\"]}"
                         if [ "${code##\#[! ]*}" = "" ]; then
                                 # ignore pragmas and other stuff
                                 continue
