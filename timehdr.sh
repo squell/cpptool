@@ -31,7 +31,7 @@ SELECT=1,2	# which results to select for averaging? (sed address expression)
 
 RECURSIVE="i guess this is okay"
 
-transaction="$(mktemp /tmp/XXXXXXXXXX.ii)"
+transaction="/tmp/cpp$$.ii"
 indent=0
 prev=0
 externc=""
@@ -41,8 +41,8 @@ measurement () {
 	#$CC $FLAGS "$transaction" -o /dev/null
 	prev="$elapsed"
 	elapsed=$(
-		for t in `seq "$PAR"`; do
-		for x in `seq "$t" "$PAR" "$SAMPLE" `; do
+		for ((t=1; t<=PAR; t++)); do
+		for ((x=t; x<=SAMPLE; x+=PAR)); do
 			(time -p $CC $FLAGS "$transaction" -o /dev/null 2> /dev/null) 2>&1 | grep "^$TIMECAT" | tr -cd '[0-9]\n'
 		done & done | sort -nk2 | sed -n "${SELECT}s/^0*//p" | awk '{ sum+=$1 } END { print int(0.5+sum/NR) }'
 	)
@@ -92,5 +92,6 @@ benchmark() {
 	printf -- "%d centiseconds total compilation time\n" "$elapsed"
 }
 
+rm -f "$transaction"
 $CC $FLAGS "$FILE" -o /dev/null
 $CC -E "$FILE" | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
