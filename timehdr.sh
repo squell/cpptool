@@ -7,13 +7,10 @@ echo "# $0 $*"
 CC="$1"
 FLAGS=""
 FILE=""
-while shift; do
-	if [ "${1%%-*}" = "" ]; then
-		FLAGS="$FLAGS $1"
-	else
-		[ -z "$FILE" ] || (echo "timehdr.sh: only one file permitted" && false)
-	    	FILE="$1"
-	fi
+shift
+for arg; do
+	FLAGS="$FLAGS $FILE"
+	FILE="$arg"
 done
 
 if [ -z "$CC" ]; then
