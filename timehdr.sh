@@ -26,7 +26,7 @@ SAMPLE=3	# how many trial compilations to run for every measurement?
 PAR=2		# how many compilations to run in parallel?
 SELECT=1,2	# which results to select for averaging? (sed address expression)
 
-RECURSIVE="i guess this is okay"
+AGGREGATE="i guess this is okay"
 
 transaction="/tmp/cpp$$.ii"
 indent=0
@@ -43,7 +43,6 @@ measurement () {
 			(time -p $CC $FLAGS "$transaction" -o /dev/null 2> /dev/null) 2>&1 | grep "^$TIMECAT" | tr -cd '[0-9]\n'
 		done & done | sort -nk2 | sed -n "${SELECT}s/^0*//p" | awk '{ sum+=$1 } END { print int(0.5+sum/NR) }'
 	)
-	printf "%6d\t%$((indent*4))s%+d\n" "$elapsed" "" "$((elapsed-prev))"
 }
 
 incremental_compilation() {
@@ -61,19 +60,17 @@ incremental_compilation() {
                         elif [ "${code##*1*}" = "" ]; then
                                 hdr="${line%[\"]*}"
                                 printf "\t%$((indent*4))s$hdr\n" ""
-				if [ "$RECURSIVE" ]; then
-				    	# these outer parentheses are very important!
+				if [ "$AGGREGATE" ]; then
+					# these outer parentheses are very important!
 					(indent=$((indent+1)); incremental_compilation)
-					measurement
 				else
-                                	indent=$((indent+1))
-				fi
-                        elif [ "${code##*2*}" = "" ] && ! [ "$externc" ]; then
-                                indent=$((indent-1))
-				if [ "$RECURSIVE" ]; then
-				   	return
+					indent=$((indent+1)); incremental_compilation
 				fi
 				measurement
+				printf "%6d\t%$((indent*4))s%+d\n" "$elapsed" "" "$((elapsed-prev))"
+                        elif [ "${code##*2*}" = "" ] && ! [ "$externc" ]; then
+                                indent=$((indent-1))
+				return
                         fi
                         externc=""
                         #hdr="${line%[\"]*}"
@@ -85,6 +82,7 @@ benchmark() {
 	printf -- 'total\theader or delta\n'
 	printf -- '----\t----\n'
 	incremental_compilation
+	measurement
 	printf -- '\n'
 	printf -- "%d centiseconds total compilation time\n" "$elapsed"
 }
@@ -92,3 +90,4 @@ benchmark() {
 rm -f "$transaction"
 $CC $FLAGS "$FILE" -o /dev/null
 $CC -E "$FILE" | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
+rm -f "$transaction"
