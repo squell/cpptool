@@ -33,12 +33,11 @@ externc=""
 marker='|'
 
 measurement () {
-	#$CC $FLAGS "$transaction" -o /dev/null
 	prev="$elapsed"
 	elapsed=$(
 		for ((t=1; t<=PAR; t++)); do
 		for ((x=t; x<=SAMPLE; x+=PAR)); do
-			(time -p $CC $FLAGS "$transaction" -o /dev/null 2> /dev/null) 2>&1 | grep "^$TIMECAT" | tr -cd '[0-9]\n'
+			(time -p $CC $FLAGS "$transaction" -o /dev/null 2> /dev/null || kill -- -$$) 2>&1 | grep "^$TIMECAT" | tr -cd '[0-9]\n'
 		done & done | sort -nk2 | sed -n "${SELECT}s/^0*//p" | awk '{ sum+=$1 } END { print int(0.5+sum/NR) }'
 	)
 }
@@ -85,7 +84,8 @@ benchmark() {
 	printf -- "%d centiseconds total compilation time\n" "$elapsed"
 }
 
+trap -- 'echo "# $CC $FLAGS $transaction -o /dev/null"; $CC $FLAGS "$transaction" -o /dev/null' TERM
+
 rm -f "$transaction"
-$CC $FLAGS "$FILE" -o /dev/null
 $CC $FLAGS -E "$FILE" | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
 rm -f "$transaction"
