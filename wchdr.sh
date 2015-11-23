@@ -4,13 +4,15 @@ set -e
 
 AGGREGATE="yes, please"
 
-CC=gcc
 FLAGS="$1"
 FILE="$2"
-if [ "-${FLAGS#-}" != "$FLAGS" ]; then
-    	echo usage: wcsdir.sh -OPTION file.c
+CC="${3:-gcc}"
+shift
+if ! shift; then
+	echo "usage: wcsdir.sh -wc-option file.c [compiler -flag ...]"
 	exit 1
 fi
+shift || true
 
 transaction="/tmp/$$.ii"
 indent=0
@@ -57,4 +59,4 @@ statistic() {
 	incremental_count
 }
 
-$CC -E "$FILE" | statistic | sed "s/    /$marker   /g;s/^$marker/ /"
+$CC $@ -E "$FILE" | statistic | sed "s/    /$marker   /g;s/^$marker/ /"
