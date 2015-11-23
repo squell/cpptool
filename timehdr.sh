@@ -89,5 +89,5 @@ benchmark() {
 
 rm -f "$transaction"
 $CC $FLAGS "$FILE" -o /dev/null
-$CC -E "$FILE" | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
+$CC $FLAGS -E "$FILE" | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
 rm -f "$transaction"
