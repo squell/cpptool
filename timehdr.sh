@@ -2,6 +2,12 @@
 
 set -e
 
+if ! which "$1" > /dev/null; then
+	echo "usage: timehdr.sh cc -flags ... file.cpp"
+	echo "	for example: timehdr.sh gcc -std=c++11 -fsyntax-only file.cpp"
+	exit 1
+fi
+
 echo "# $0 $*"
 
 CC="$1"
@@ -12,14 +18,6 @@ for arg; do
 	FLAGS="$FLAGS $FILE"
 	FILE="$arg"
 done
-
-if [ -z "$CC" ]; then
-	echo "usage: timehdr.sh cc -flags ... file.cpp"
-	echo "	for example: timehdr.sh gcc -std=c++11 -fsyntax-only file.cpp"
-	exit 1
-fi
-
-which "$CC" > /dev/null || (echo "$CC: command not found" && false)
 
 TIMECAT=user	# select the time category: real, user or sys
 SAMPLE=3	# how many trial compilations to run for every measurement?

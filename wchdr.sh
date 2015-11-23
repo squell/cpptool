@@ -7,8 +7,7 @@ AGGREGATE="yes, please"
 FLAGS="$1"
 FILE="$2"
 CC="${3:-gcc}"
-shift
-if ! shift; then
+if ! shift || ! shift; then
 	echo "usage: wcsdir.sh -wc-option file.c [compiler -flag ...]"
 	exit 1
 fi
