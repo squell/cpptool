@@ -25,7 +25,7 @@ measurement () {
 }
 
 incremental_count() {
-        while read line; do
+        while read -r line; do
                 if [ "${line%%[!#]*}" ]; then
                         line="${line#\# *[\"]}"
                         code="${line##*[\"]}"

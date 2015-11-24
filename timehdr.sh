@@ -52,7 +52,7 @@ measurement() {
 }
 
 incremental_compilation() {
-        while read line; do
+        while read -r line; do
                 echo "$line" >> "$transaction"
                 if [ "${line%%[!#]*}" ]; then
                         line="${line#\# *[\"]}"
