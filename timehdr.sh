@@ -27,11 +27,20 @@ SELECT=1,2	# which results to select for averaging? (sed address expression)
 transaction="/tmp/timehdr$$.ii"
 indent=0
 prev=0
-externc=0
 marker='|'
 
-measurement () {
-	if [ "$externc" -gt 0 ]; then printf "%${externc}s\n" "" | tr ' ' '}' >> "$transaction"; fi
+balance() {
+	tr -cd '{}' | sed ':l;s/{}//g;tl;y/{/}/'
+}
+
+measurement() {
+	bal="$(balance < "$transaction")"
+	if [ "$bal" ]; then
+		echo "$bal" >> "$transaction"
+		measurement
+		sed -i '$d' "$transaction"
+		return
+	fi
 	prev="$elapsed"
 	elapsed=$(
 		for ((t=1; t<=PAR; t++)); do
@@ -39,7 +48,6 @@ measurement () {
 			(time -p $CC $FLAGS "$transaction" -o /dev/null 2> /dev/null || kill -- -$$) 2>&1 | grep "^$TIMECAT" | tr -cd '[0-9]\n'
 		done & done | sort -nk2 | sed -n "${SELECT}s/^0*//p" | awk '{ sum+=$1 } END { print int(0.5+sum/NR) }'
 	)
-	if [ "$externc" -gt 0 ]; then sed -i '$d' "$transaction"; fi
 }
 
 incremental_compilation() {
@@ -61,8 +69,6 @@ incremental_compilation() {
                         elif [ "${code##*2*}" = "" ]; then
 				return
                         fi
-		elif [ "${line##extern*\"C*\{}" != "$line" ]; then
-			externc=$((externc+1))
                 fi
         done
 }
