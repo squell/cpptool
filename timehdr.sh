@@ -2,8 +2,14 @@
 
 set -e
 
+cutoff=""
+if [ "-${1#-}" = "$1" ]; then
+	cutoff="${1#-}"
+	shift
+fi
+
 if ! which "$1" > /dev/null; then
-	echo "usage: timehdr.sh cc -flags ... file.cpp"
+	echo "usage: timehdr.sh [-maxdepth] cc -flags ... file.cpp"
 	echo "	for example: timehdr.sh gcc -std=c++11 -fsyntax-only file.cpp"
 	exit 1
 fi
@@ -62,6 +68,11 @@ incremental_compilation() {
                                 continue
                         elif [ "${code##*1*}" = "" ]; then
                                 hdr="${line%[\"]*}"
+				[ "$indent" -le "${cutoff:-$indent}" ] || { 
+					printf "\t%$((indent*4))s+$hdr\n" ""
+					incremental_compilation
+					continue
+				}
                                 printf "\t%$((indent*4))s$hdr\n" ""
 				# these outer parentheses are very important!
 				(indent=$((indent+1)); incremental_compilation)
