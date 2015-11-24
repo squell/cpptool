@@ -14,7 +14,7 @@ if ! which "$1" > /dev/null; then
 	exit 1
 fi
 
-echo "# $0 $*"
+echo "# $0 ${cutoff:+-$cutoff }$*"
 
 CC="$1"
 FLAGS=""
@@ -86,6 +86,7 @@ incremental_compilation() {
 }
 
 benchmark() {
+	trap -- 'echo "# $CC $FLAGS $transaction -o /dev/null"; $CC $FLAGS "$transaction" -o /dev/null' TERM
 	printf -- 'total\theader or delta\n'
 	printf -- '----\t----\n'
 	incremental_compilation
@@ -94,8 +95,6 @@ benchmark() {
 	printf -- "%d centiseconds total compilation time\n" "$elapsed"
 }
 
-trap -- 'echo "# $CC $FLAGS $transaction -o /dev/null"; $CC $FLAGS "$transaction" -o /dev/null' TERM
-
 rm -f "$transaction"
-$CC $FLAGS -E "$FILE" | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
+{ $CC $FLAGS -E "$FILE" || kill -- -$$; } | benchmark | sed "s/    /$marker   /g;s/^$marker/ /"
 rm -f "$transaction"
