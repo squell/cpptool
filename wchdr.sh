@@ -25,30 +25,30 @@ measurement () {
 }
 
 incremental_count() {
-        while read -r line; do
-                if [ "${line%%[!#]*}" ]; then
-                        line="${line#\# *[\"]}"
-                        code="${line##*[\"]}"
-                        if [ "${code##\#[! ]*}" = "" ]; then
-                                # ignore pragmas and other stuff
-                                continue
-                        elif [ "${code##*1*}" = "" ]; then
-                                hdr="${line%[\"]*}"
-                                printf "\t%$((indent*4))s$hdr\n" ""
+	while read -r line; do
+		if [ "${line%%[!#]*}" ]; then
+			line="${line#\# *[\"]}"
+			code="${line##*[\"]}"
+			if [ "${code##\#[! ]*}" = "" ]; then
+				# ignore pragmas and other stuff
+				continue
+			elif [ "${code##*1*}" = "" ]; then
+				hdr="${line%[\"]*}"
+				printf "\t%$((indent*4))s$hdr\n" ""
 				if [ "$AGGREGATE" ]; then
 					(indent=$((indent+1)); incremental_count)
 				else
 					indent=$((indent+1)); incremental_count
 				fi
 				measurement
-                        elif [ "${code##*2*}" = "" ]; then
-                                indent=$((indent-1))
+			elif [ "${code##*2*}" = "" ]; then
+				indent=$((indent-1))
 				return
-                        fi
+			fi
 		else
 			echo "$line" >> "$transaction"
-                fi
-        done
+		fi
+	done
 }
 
 statistic() {

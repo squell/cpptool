@@ -58,31 +58,31 @@ measurement() {
 }
 
 incremental_compilation() {
-        while read -r line; do
-                echo "$line" >> "$transaction"
-                if [ "${line%%[!#]*}" ]; then
-                        line="${line#\# *[\"]}"
-                        code="${line##*[\"]}"
-                        if [ "${code##\#[! ]*}" = "" ]; then
-                                # ignore pragmas and other stuff
-                                continue
-                        elif [ "${code##*1*}" = "" ]; then
-                                hdr="${line%[\"]*}"
+	while read -r line; do
+		echo "$line" >> "$transaction"
+		if [ "${line%%[!#]*}" ]; then
+			line="${line#\# *[\"]}"
+			code="${line##*[\"]}"
+			if [ "${code##\#[! ]*}" = "" ]; then
+				# ignore pragmas and other stuff
+				continue
+			elif [ "${code##*1*}" = "" ]; then
+				hdr="${line%[\"]*}"
 				[ "$indent" -le "${cutoff:-$indent}" ] || { 
-					printf "\t%$((indent*4))s+$hdr\n" ""
-					incremental_compilation
+					[ "$1" ] || printf "\t%$((indent*4))s+$hdr\n" ""
+					incremental_compilation "wheee"
 					continue
 				}
-                                printf "\t%$((indent*4))s$hdr\n" ""
+				printf "\t%$((indent*4))s$hdr\n" ""
 				# these outer parentheses are very important!
 				(indent=$((indent+1)); incremental_compilation)
 				measurement
 				printf "%6d\t%$((indent*4))s%+d\n" "$elapsed" "" "$((elapsed-prev))"
-                        elif [ "${code##*2*}" = "" ]; then
+			elif [ "${code##*2*}" = "" ]; then
 				return
-                        fi
-                fi
-        done
+			fi
+		fi
+	done
 }
 
 benchmark() {
