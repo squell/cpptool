@@ -1,0 +1,499 @@
+# ./timehdr.sh -3 g++ -std=c++11 -O2 -c example/test.cpp
+total	header or delta
+----	----
+	/usr/include/stdc-predef.h
+     1	+1
+	/usr/include/c++/4.8/cstdio
+	|   /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h
+	|   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h
+	|   |   |   /usr/include/features.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/sys/cdefs.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/gnu/stubs.h
+     1	|   |   |   +0
+     0	|   |   -1
+	|   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h
+     1	|   |   +1
+     1	|   +0
+	|   /usr/include/stdio.h
+	|   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
+     0	|   |   -1
+	|   |   /usr/include/x86_64-linux-gnu/bits/types.h
+	|   |   |   /usr/include/x86_64-linux-gnu/bits/wordsize.h
+     0	|   |   |   +0
+	|   |   |   /usr/include/x86_64-linux-gnu/bits/typesizes.h
+     0	|   |   |   +0
+     1	|   |   +1
+	|   |   /usr/include/libio.h
+	|   |   |   /usr/include/_G_config.h
+	|   |   |   |   +/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
+	|   |   |   |   +/usr/include/wchar.h
+     1	|   |   |   +0
+	|   |   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h
+     0	|   |   |   -1
+     0	|   |   -1
+	|   |   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
+     0	|   |   +0
+	|   |   /usr/include/x86_64-linux-gnu/bits/sys_errlist.h
+     1	|   |   +1
+	|   |   /usr/include/x86_64-linux-gnu/bits/stdio.h
+     1	|   |   +0
+	|   |   /usr/include/x86_64-linux-gnu/bits/stdio2.h
+     1	|   |   +0
+     1	|   +0
+     1	+0
+	/usr/include/c++/4.8/cstdlib
+	|   /usr/include/stdlib.h
+	|   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
+     1	|   |   +0
+	|   |   /usr/include/x86_64-linux-gnu/bits/waitflags.h
+     2	|   |   +1
+	|   |   /usr/include/x86_64-linux-gnu/bits/waitstatus.h
+	|   |   |   /usr/include/endian.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/endian.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/byteswap.h
+     2	|   |   |   +0
+     2	|   |   +0
+	|   |   /usr/include/xlocale.h
+     2	|   |   +0
+	|   |   /usr/include/x86_64-linux-gnu/sys/types.h
+	|   |   |   /usr/include/time.h
+     1	|   |   |   -1
+	|   |   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
+     2	|   |   |   +1
+	|   |   |   /usr/include/x86_64-linux-gnu/sys/select.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/select.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/sigset.h
+	|   |   |   |   +/usr/include/time.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/time.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/select2.h
+     1	|   |   |   -1
+	|   |   |   /usr/include/x86_64-linux-gnu/sys/sysmacros.h
+     2	|   |   |   +1
+	|   |   |   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/bits/wordsize.h
+     2	|   |   |   +0
+     1	|   |   -1
+	|   |   /usr/include/alloca.h
+	|   |   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
+     1	|   |   |   +0
+     2	|   |   +1
+	|   |   /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h
+     1	|   |   -1
+	|   |   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
+     3	|   |   +2
+	|   |   /usr/include/x86_64-linux-gnu/bits/stdlib.h
+     2	|   |   -1
+     1	|   +0
+     2	+1
+	/usr/include/c++/4.8/cstring
+	|   /usr/include/string.h
+	|   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
+     2	|   |   +0
+	|   |   /usr/include/x86_64-linux-gnu/bits/string3.h
+     3	|   |   +1
+     3	|   +1
+     3	+1
+	/usr/include/c++/4.8/cassert
+	|   /usr/include/assert.h
+     2	|   -1
+     3	+0
+	/usr/include/c++/4.8/string
+	|   /usr/include/c++/4.8/bits/stringfwd.h
+	|   |   /usr/include/c++/4.8/bits/memoryfwd.h
+     3	|   |   +0
+     2	|   -1
+	|   /usr/include/c++/4.8/bits/char_traits.h
+	|   |   /usr/include/c++/4.8/bits/stl_algobase.h
+	|   |   |   /usr/include/c++/4.8/bits/functexcept.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/exception_defines.h
+     2	|   |   |   +0
+	|   |   |   /usr/include/c++/4.8/bits/cpp_type_traits.h
+     3	|   |   |   +1
+	|   |   |   /usr/include/c++/4.8/ext/type_traits.h
+     3	|   |   |   +0
+	|   |   |   /usr/include/c++/4.8/ext/numeric_traits.h
+     2	|   |   |   -1
+	|   |   |   /usr/include/c++/4.8/bits/stl_pair.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/move.h
+     3	|   |   |   +1
+	|   |   |   /usr/include/c++/4.8/bits/stl_iterator_base_types.h
+     4	|   |   |   +1
+	|   |   |   /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h
+	|   |   |   |   +/usr/include/c++/4.8/debug/debug.h
+     4	|   |   |   +0
+	|   |   |   /usr/include/c++/4.8/bits/stl_iterator.h
+     4	|   |   |   +0
+     6	|   |   +4
+	|   |   /usr/include/c++/4.8/bits/postypes.h
+	|   |   |   /usr/include/c++/4.8/cwchar
+	|   |   |   |   +/usr/include/wchar.h
+     7	|   |   |   +1
+     7	|   |   +1
+	|   |   /usr/include/c++/4.8/cwchar
+	|   |   |   /usr/include/wchar.h
+     6	|   |   |   -1
+     6	|   |   -1
+	|   |   /usr/include/c++/4.8/cstdint
+	|   |   |   /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h
+	|   |   |   |   +/usr/include/stdint.h
+     6	|   |   |   +0
+     6	|   |   +0
+     6	|   +4
+	|   /usr/include/c++/4.8/bits/allocator.h
+	|   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h
+	|   |   |   /usr/include/c++/4.8/ext/new_allocator.h
+	|   |   |   |   +/usr/include/c++/4.8/new
+     7	|   |   |   +1
+     7	|   |   +1
+     8	|   +2
+	|   /usr/include/c++/4.8/bits/localefwd.h
+	|   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h
+	|   |   |   /usr/include/c++/4.8/clocale
+	|   |   |   |   +/usr/include/locale.h
+     8	|   |   |   +0
+     7	|   |   -1
+	|   |   /usr/include/c++/4.8/iosfwd
+     8	|   |   +1
+	|   |   /usr/include/c++/4.8/cctype
+	|   |   |   /usr/include/ctype.h
+     8	|   |   |   +0
+     6	|   |   -2
+     7	|   -1
+	|   /usr/include/c++/4.8/bits/ostream_insert.h
+	|   |   /usr/include/c++/4.8/bits/cxxabi_forced.h
+     7	|   |   +0
+     8	|   +1
+	|   /usr/include/c++/4.8/bits/stl_function.h
+	|   |   /usr/include/c++/4.8/backward/binders.h
+     7	|   |   -1
+     8	|   +0
+	|   /usr/include/c++/4.8/bits/range_access.h
+     8	|   +0
+	|   /usr/include/c++/4.8/bits/basic_string.h
+	|   |   /usr/include/c++/4.8/ext/atomicity.h
+	|   |   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h
+	|   |   |   |   +/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h
+     9	|   |   |   +1
+	|   |   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h
+     9	|   |   |   +0
+     9	|   |   +1
+	|   |   /usr/include/c++/4.8/initializer_list
+     9	|   |   +0
+	|   |   /usr/include/c++/4.8/ext/string_conversions.h
+	|   |   |   /usr/include/c++/4.8/cstdlib
+    11	|   |   |   +2
+	|   |   |   /usr/include/c++/4.8/cwchar
+	|   |   |   |   +/usr/include/wchar.h
+    11	|   |   |   +0
+	|   |   |   /usr/include/c++/4.8/cstdio
+    10	|   |   |   -1
+	|   |   |   /usr/include/c++/4.8/cerrno
+	|   |   |   |   +/usr/include/errno.h
+    10	|   |   |   +0
+    10	|   |   +1
+	|   |   /usr/include/c++/4.8/bits/functional_hash.h
+	|   |   |   /usr/include/c++/4.8/bits/hash_bytes.h
+    13	|   |   |   +3
+    12	|   |   +2
+    13	|   +5
+	|   /usr/include/c++/4.8/bits/basic_string.tcc
+    13	|   +0
+    14	+11
+	/usr/include/c++/4.8/iostream
+	|   /usr/include/c++/4.8/ostream
+	|   |   /usr/include/c++/4.8/ios
+	|   |   |   /usr/include/c++/4.8/bits/ios_base.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/locale_classes.h
+    16	|   |   |   +2
+	|   |   |   /usr/include/c++/4.8/streambuf
+	|   |   |   |   +/usr/include/c++/4.8/bits/streambuf.tcc
+    16	|   |   |   +0
+	|   |   |   /usr/include/c++/4.8/bits/basic_ios.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/locale_facets.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/basic_ios.tcc
+    19	|   |   |   +3
+    20	|   |   +6
+	|   |   /usr/include/c++/4.8/bits/ostream.tcc
+    19	|   |   -1
+    21	|   +7
+	|   /usr/include/c++/4.8/istream
+	|   |   /usr/include/c++/4.8/bits/istream.tcc
+    22	|   |   +1
+    23	|   +2
+    22	+8
+	/usr/include/c++/4.8/algorithm
+	|   /usr/include/c++/4.8/utility
+	|   |   /usr/include/c++/4.8/bits/stl_relops.h
+    24	|   |   +2
+    19	|   -3
+	|   /usr/include/c++/4.8/bits/stl_algo.h
+	|   |   /usr/include/c++/4.8/cstdlib
+    21	|   |   +2
+	|   |   /usr/include/c++/4.8/bits/algorithmfwd.h
+    23	|   |   +2
+	|   |   /usr/include/c++/4.8/bits/stl_heap.h
+    21	|   |   -2
+	|   |   /usr/include/c++/4.8/bits/stl_tempbuf.h
+	|   |   |   /usr/include/c++/4.8/bits/stl_construct.h
+	|   |   |   |   +/usr/include/c++/4.8/ext/alloc_traits.h
+    24	|   |   |   +3
+    25	|   |   +4
+	|   |   /usr/include/c++/4.8/random
+	|   |   |   /usr/include/c++/4.8/cmath
+	|   |   |   |   +/usr/include/math.h
+    26	|   |   |   +1
+	|   |   |   /usr/include/c++/4.8/cstdio
+    23	|   |   |   -3
+	|   |   |   /usr/include/c++/4.8/cstdlib
+    23	|   |   |   +0
+	|   |   |   /usr/include/c++/4.8/limits
+    25	|   |   |   +2
+	|   |   |   /usr/include/c++/4.8/bits/random.h
+	|   |   |   |   +/usr/include/c++/4.8/vector
+    31	|   |   |   +6
+	|   |   |   /usr/include/x86_64-linux-gnu/c++/4.8/bits/opt_random.h
+	|   |   |   |   +/usr/lib/gcc/x86_64-linux-gnu/4.8/include/x86intrin.h
+    40	|   |   |   +9
+	|   |   |   /usr/include/c++/4.8/bits/random.tcc
+	|   |   |   |   +/usr/include/c++/4.8/numeric
+    40	|   |   |   +0
+    41	|   |   +16
+	|   |   /usr/include/c++/4.8/functional
+	|   |   |   /usr/include/c++/4.8/typeinfo
+    43	|   |   |   +2
+	|   |   |   /usr/include/c++/4.8/tuple
+	|   |   |   |   +/usr/include/c++/4.8/array
+	|   |   |   |   +/usr/include/c++/4.8/bits/uses_allocator.h
+    44	|   |   |   +1
+    42	|   |   +1
+    49	|   +30
+    47	+25
+	/usr/include/c++/4.8/map
+	|   /usr/include/c++/4.8/bits/stl_tree.h
+    47	|   +0
+	|   /usr/include/c++/4.8/bits/stl_map.h
+    49	|   +2
+	|   /usr/include/c++/4.8/bits/stl_multimap.h
+    50	|   +1
+    48	+1
+	/usr/include/boost/program_options.hpp
+	|   /usr/include/boost/program_options/options_description.hpp
+	|   |   /usr/include/boost/program_options/config.hpp
+	|   |   |   /usr/include/boost/config.hpp
+	|   |   |   |   +/usr/include/boost/config/user.hpp
+	|   |   |   |   +/usr/include/boost/config/select_compiler_config.hpp
+	|   |   |   |   +/usr/include/boost/config/compiler/gcc.hpp
+	|   |   |   |   +/usr/include/boost/config/select_stdlib_config.hpp
+	|   |   |   |   +/usr/include/boost/config/stdlib/libstdcpp3.hpp
+	|   |   |   |   +/usr/include/boost/config/select_platform_config.hpp
+	|   |   |   |   +/usr/include/boost/config/platform/linux.hpp
+	|   |   |   |   +/usr/include/boost/config/suffix.hpp
+    48	|   |   |   +0
+	|   |   |   /usr/include/boost/version.hpp
+    47	|   |   |   -1
+	|   |   |   /usr/include/boost/config/auto_link.hpp
+    48	|   |   |   +1
+    47	|   |   -1
+	|   |   /usr/include/boost/program_options/errors.hpp
+    67	|   |   +20
+	|   |   /usr/include/boost/program_options/value_semantic.hpp
+	|   |   |   /usr/include/boost/any.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/remove_reference.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/is_reference.hpp
+	|   |   |   |   +/usr/include/boost/throw_exception.hpp
+	|   |   |   |   +/usr/include/boost/static_assert.hpp
+	|   |   |   |   +/usr/include/boost/utility/enable_if.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/is_same.hpp
+	|   |   |   |   +/usr/include/c++/4.8/cstring
+    69	|   |   |   +2
+	|   |   |   /usr/include/boost/function/function1.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/maybe_include.hpp
+    73	|   |   |   +4
+	|   |   |   /usr/include/boost/lexical_cast.hpp
+	|   |   |   |   +/usr/include/c++/4.8/climits
+	|   |   |   |   +/usr/include/c++/4.8/cstddef
+	|   |   |   |   +/usr/include/c++/4.8/cstring
+	|   |   |   |   +/usr/include/c++/4.8/cstdio
+	|   |   |   |   +/usr/include/boost/detail/lcast_precision.hpp
+	|   |   |   |   +/usr/include/c++/4.8/locale
+	|   |   |   |   +/usr/include/c++/4.8/sstream
+	|   |   |   |   +/usr/include/c++/4.8/cmath
+	|   |   |   |   +/usr/include/boost/array.hpp
+	|   |   |   |   +/usr/include/boost/numeric/conversion/cast.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/make_unsigned.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/remove_pointer.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/has_left_shift.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/has_right_shift.hpp
+	|   |   |   |   +/usr/include/boost/math/special_functions/sign.hpp
+	|   |   |   |   +/usr/include/boost/math/special_functions/fpclassify.hpp
+	|   |   |   |   +/usr/include/boost/range/iterator_range_core.hpp
+	|   |   |   |   +/usr/include/boost/container/container_fwd.hpp
+	|   |   |   |   +/usr/include/c++/4.8/cwchar
+   109	|   |   |   +36
+	|   |   |   /usr/include/boost/program_options/detail/value_semantic.hpp
+   105	|   |   |   -4
+   101	|   |   +34
+	|   |   /usr/include/boost/function.hpp
+	|   |   |   /usr/include/boost/preprocessor/iterate.hpp
+	|   |   |   |   +/usr/include/boost/preprocessor/iteration/iterate.hpp
+   102	|   |   |   +1
+	|   |   |   /usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp
+	|   |   |   |   +/usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp
+	|   |   |   |   +/usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+	|   |   |   |   +/usr/include/boost/function/detail/function_iterate.hpp
+   113	|   |   |   +11
+   111	|   |   +10
+	|   |   /usr/include/boost/shared_ptr.hpp
+	|   |   |   /usr/include/boost/smart_ptr/shared_ptr.hpp
+	|   |   |   |   +/usr/include/boost/assert.hpp
+	|   |   |   |   +/usr/include/boost/checked_delete.hpp
+	|   |   |   |   +/usr/include/boost/smart_ptr/detail/shared_count.hpp
+	|   |   |   |   +/usr/include/boost/smart_ptr/detail/sp_convertible.hpp
+	|   |   |   |   +/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp
+	|   |   |   |   +/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp
+	|   |   |   |   +/usr/include/boost/memory_order.hpp
+	|   |   |   |   +/usr/include/c++/4.8/cstddef
+	|   |   |   |   +/usr/include/boost/smart_ptr/detail/operator_bool.hpp
+   114	|   |   |   +3
+   117	|   |   +6
+	|   |   /usr/include/c++/4.8/set
+	|   |   |   /usr/include/c++/4.8/bits/stl_set.h
+   113	|   |   |   -4
+	|   |   |   /usr/include/c++/4.8/bits/stl_multiset.h
+   111	|   |   |   -2
+   117	|   |   +0
+   119	|   +71
+	|   /usr/include/boost/program_options/positional_options.hpp
+   120	|   +1
+	|   /usr/include/boost/program_options/parsers.hpp
+	|   |   /usr/include/boost/program_options/option.hpp
+   110	|   |   -10
+	|   |   /usr/include/boost/program_options/detail/cmdline.hpp
+	|   |   |   /usr/include/boost/program_options/cmdline.hpp
+   113	|   |   |   +3
+	|   |   |   /usr/include/boost/function.hpp
+	|   |   |   |   +/usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp
+   111	|   |   |   -2
+   104	|   |   -6
+	|   |   /usr/include/boost/function/function1.hpp
+	|   |   |   /usr/include/boost/function/detail/maybe_include.hpp
+   117	|   |   |   +13
+   117	|   |   +13
+	|   |   /usr/include/boost/program_options/detail/parsers.hpp
+	|   |   |   /usr/include/boost/program_options/detail/convert.hpp
+	|   |   |   |   +/usr/include/c++/4.8/cwchar
+   118	|   |   |   +1
+   113	|   |   -4
+   105	|   -15
+	|   /usr/include/boost/program_options/variables_map.hpp
+   117	|   +12
+	|   /usr/include/boost/program_options/version.hpp
+   120	|   +3
+   108	+60
+	/usr/include/boost/filesystem.hpp
+	|   /usr/include/boost/filesystem/config.hpp
+	|   |   /usr/include/boost/system/api_config.hpp
+   115	|   |   +7
+	|   |   /usr/include/boost/config/auto_link.hpp
+   122	|   |   +7
+   119	|   +11
+	|   /usr/include/boost/filesystem/path.hpp
+	|   |   /usr/include/boost/filesystem/path_traits.hpp
+	|   |   |   /usr/include/boost/type_traits/decay.hpp
+	|   |   |   |   +/usr/include/boost/type_traits/remove_bounds.hpp
+   115	|   |   |   -4
+	|   |   |   /usr/include/boost/system/error_code.hpp
+	|   |   |   |   +/usr/include/boost/system/config.hpp
+	|   |   |   |   +/usr/include/boost/cstdint.hpp
+	|   |   |   |   +/usr/include/boost/assert.hpp
+	|   |   |   |   +/usr/include/boost/operators.hpp
+	|   |   |   |   +/usr/include/boost/noncopyable.hpp
+	|   |   |   |   +/usr/include/boost/cerrno.hpp
+	|   |   |   |   +/usr/include/boost/config/abi_prefix.hpp
+	|   |   |   |   +/usr/include/boost/config/abi_suffix.hpp
+   119	|   |   |   +4
+	|   |   |   /usr/include/c++/4.8/cwchar
+	|   |   |   |   +/usr/include/wchar.h
+   109	|   |   |   -10
+	|   |   |   /usr/include/c++/4.8/list
+	|   |   |   |   +/usr/include/c++/4.8/bits/stl_list.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/list.tcc
+   115	|   |   |   +6
+	|   |   |   /usr/include/boost/assert.hpp
+	|   |   |   |   +/usr/include/assert.h
+   123	|   |   |   +8
+	|   |   |   /usr/include/boost/config/abi_prefix.hpp
+   123	|   |   |   +0
+	|   |   |   /usr/include/boost/config/abi_suffix.hpp
+   122	|   |   |   -1
+   123	|   |   +4
+	|   |   /usr/include/boost/system/system_error.hpp
+	|   |   |   /usr/include/c++/4.8/cassert
+	|   |   |   |   +/usr/include/assert.h
+   109	|   |   |   -14
+   129	|   |   +6
+	|   |   /usr/include/boost/io/detail/quoted_manip.hpp
+	|   |   |   /usr/include/boost/io/ios_state.hpp
+	|   |   |   |   +/usr/include/boost/io_fwd.hpp
+   128	|   |   |   -1
+   128	|   |   -1
+	|   |   /usr/include/boost/functional/hash_fwd.hpp
+   124	|   |   -4
+	|   |   /usr/include/c++/4.8/cstring
+   126	|   |   +2
+	|   |   /usr/include/c++/4.8/cassert
+	|   |   |   /usr/include/assert.h
+   123	|   |   |   -3
+   129	|   |   +3
+	|   |   /usr/include/boost/config/abi_prefix.hpp
+   131	|   |   +2
+	|   |   /usr/include/boost/config/abi_suffix.hpp
+   134	|   |   +3
+   135	|   +16
+	|   /usr/include/boost/filesystem/operations.hpp
+	|   |   /usr/include/boost/detail/scoped_enum_emulation.hpp
+   128	|   |   -7
+	|   |   /usr/include/boost/detail/bitmask.hpp
+	|   |   |   /usr/include/boost/cstdint.hpp
+   136	|   |   |   +8
+   125	|   |   -3
+	|   |   /usr/include/boost/cstdint.hpp
+   137	|   |   +12
+	|   |   /usr/include/boost/assert.hpp
+	|   |   |   /usr/include/assert.h
+   122	|   |   |   -15
+   128	|   |   -9
+	|   |   /usr/include/c++/4.8/ctime
+   123	|   |   -5
+	|   |   /usr/include/c++/4.8/stack
+	|   |   |   /usr/include/c++/4.8/deque
+	|   |   |   |   +/usr/include/c++/4.8/bits/stl_deque.h
+	|   |   |   |   +/usr/include/c++/4.8/bits/deque.tcc
+   126	|   |   |   +3
+	|   |   |   /usr/include/c++/4.8/bits/stl_stack.h
+   127	|   |   |   +1
+   129	|   |   +6
+	|   |   /usr/include/boost/config/abi_prefix.hpp
+   134	|   |   +5
+	|   |   /usr/include/boost/config/abi_suffix.hpp
+   128	|   |   -6
+   147	|   +12
+	|   /usr/include/boost/filesystem/convenience.hpp
+	|   |   /usr/include/boost/config/abi_prefix.hpp
+   147	|   |   +0
+	|   |   /usr/include/boost/config/abi_suffix.hpp
+   145	|   |   -2
+   147	|   +0
+   149	+41
+
+147 centiseconds total compilation time
