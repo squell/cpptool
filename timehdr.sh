@@ -1,4 +1,4 @@
-# /usr/bin/env bash
+#! /usr/bin/env bash
 
 set -e
 
@@ -35,8 +35,16 @@ indent=0
 prev=0
 marker='|'
 
+test -x "$(which truncate)" || truncate() {
+	# fake truncate for systems without GNU coreutils
+	ed "$3" <<<EOF
+	\$d
+	wq
+	EOF
+}
+
 balance() {
-	tr -cd '{}' | sed ':l;s/{}//g;tl;y/{/}/'
+	tr -cd '{}' | sed $':l\ns/{}//g;tl\ny/{/}/'
 }
 
 measurement() {
