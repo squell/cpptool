@@ -34,11 +34,12 @@ balance() {
 }
 
 measurement() {
-	bal="$(balance < "$transaction")"
-	if [ "$bal" ]; then
-		echo "$bal" >> "$transaction"
+	braces="$(balance < "$transaction")"
+	if [ "$braces" ]; then
+		echo "$braces" >> "$transaction"
+		bytes_added=$(( ${#braces}+1 ))
 		measurement
-		sed -i '$d' "$transaction"
+		truncate -s "-${bytes_added}" "$transaction"
 		return
 	fi
 	prev="$elapsed"
